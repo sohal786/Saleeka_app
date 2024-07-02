@@ -1,11 +1,18 @@
-import React from 'react';
+import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import BottomTabNavigator from './app/(tabs)'; // Adjust the path if necessary
+import { createStackNavigator } from '@react-navigation/stack';
+import CameraScreen from './components/CameraScreen';
+import ResultsPage from './components/ResultsPage';
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <BottomTabNavigator />
+      <Stack.Navigator initialRouteName="Camera">
+        <Stack.Screen name="Camera" component={CameraScreen} />
+        <Stack.Screen name="Results" component={ResultsPage} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
