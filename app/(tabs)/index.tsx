@@ -1,19 +1,21 @@
 import React from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import TabOneScreen from './TabOneScreen';
-import TabTwoScreen from './two';
-import CameraScreen from '../../components/CameraScreen';
+import { View, StyleSheet } from 'react-native';
+import CameraScreen from '../../components/CameraScreen'; // Adjust the import path if necessary
 
-const BottomTab = createBottomTabNavigator();
-
-function BottomTabNavigator() {
+const Index = () => {
   return (
-    <BottomTab.Navigator>
-      <BottomTab.Screen name="TabOne" component={TabOneScreen} />
-      <BottomTab.Screen name="TabTwo" component={TabTwoScreen} />
-      <BottomTab.Screen name="Camera" component={CameraScreen} />
-    </BottomTab.Navigator>
+    <View style={styles.container}>
+      <CameraScreen />
+    </View>
   );
-}
+};
 
-export default BottomTabNavigator;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
+
+export default Index;
